@@ -20,10 +20,7 @@ public class CharacterMovement : MonoBehaviour
     {
         swerveSystem = GetComponent<SwerveSystem>();
     }
-    private void Start()
-    {
-        startPos = transform.position;
-    }
+
     private void Update()
     {
         if (this.startGame <= 0)
@@ -52,10 +49,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Obstacle")
-        {
-            playerRb.transform.position = startPos;
-        }
+
         if (collision.collider.tag == "MovingObstacle")
         {
             Vector3 dir = new Vector3(100f, 0f, 0f);
